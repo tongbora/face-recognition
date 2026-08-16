@@ -21,7 +21,7 @@ export const seoConfig = {
   ],
   creator: "danadorn, tongbora",
   publisher: "danadorn, tongbora",
-  ogImage: "/favicon.ico",
+  ogImage: "/opengraph-image",
   twitterHandle: "@todo",
 };
 
