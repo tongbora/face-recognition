@@ -25,7 +25,7 @@ export function Terminal({ className, children, ...props }: TerminalProps) {
         <span className="h-3 w-3 rounded-full bg-primary" />
         <span className="h-3 w-3 rounded-full bg-stone-500" />
       </div>
-      <pre className="grid gap-3 overflow-x-auto p-5 font-mono text-sm leading-6">
+      <pre className="grid min-w-0 gap-3 overflow-hidden whitespace-pre-wrap p-4 font-mono text-xs leading-6 sm:p-5 sm:text-sm">
         {children}
       </pre>
     </div>
@@ -35,7 +35,7 @@ export function Terminal({ className, children, ...props }: TerminalProps) {
 export function AnimatedSpan({ delay = 0, className, style, children, ...props }: TerminalLineProps) {
   return (
     <span
-      className={cn("terminal-fade-in block opacity-0", className)}
+      className={cn("terminal-fade-in block max-w-full break-all opacity-0", className)}
       style={{ animationDelay: `${delay}ms`, ...style }}
       {...props}
     >
@@ -54,7 +54,7 @@ export function TypingAnimation({ delay = 0, className, style, children, ...prop
 
   return (
     <span
-      className={cn("terminal-typing block w-fit max-w-full overflow-hidden whitespace-nowrap opacity-0", className)}
+      className={cn("terminal-typing block w-full max-w-full overflow-hidden whitespace-pre-wrap break-all opacity-0", className)}
       style={animationStyle}
       {...props}
     >
