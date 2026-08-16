@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Google_Sans, Google_Sans_Code } from "next/font/google";
+import { createSeoMetadata, SeoJsonLd } from "@/components/seo";
 import "./globals.css";
 
 const googleSans = Google_Sans({
@@ -14,15 +15,15 @@ const googleSansCode = Google_Sans_Code({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "Face Recognition System",
-  description: "A slide presentation for a Streamlit and ArcFace face verification project.",
-};
+export const metadata: Metadata = createSeoMetadata();
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${googleSans.variable} ${googleSansCode.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <SeoJsonLd />
+        {children}
+      </body>
     </html>
   );
 }
