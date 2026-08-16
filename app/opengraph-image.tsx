@@ -48,7 +48,7 @@ export default function OpenGraphImage() {
           </div>
         </div>
 
-        <div>
+        <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ color: "#8f4f00", fontSize: "28px", fontWeight: 900, letterSpacing: "12px", textTransform: "uppercase" }}>
             Artificial Intelligence Project
           </div>
