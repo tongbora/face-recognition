@@ -9,7 +9,7 @@ import { WorkflowSection } from "./face-recognition/workflow-section";
 
 export function FaceRecognitionPresentation() {
   return (
-    <main className="min-h-screen overflow-x-hidden bg-[#f5f7f5] text-stone-950">
+    <main className="min-h-screen w-full min-w-0 overflow-x-hidden bg-[#f5f7f5] text-stone-950">
       <SiteNav />
       <HeroSection />
       <OverviewSection />

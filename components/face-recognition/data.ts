@@ -1,4 +1,4 @@
-export const navItems = ["Overview", "Stack", "Setup", "Workflow", "Decision", "Functions"] as const;
+export const navItems = ["Overview", "Stack", "Workflow", "Decision", "Functions", "Setup"] as const;
 
 export const stackItems = [
   { name: "Python", purpose: "Application logic", logo: "python" },

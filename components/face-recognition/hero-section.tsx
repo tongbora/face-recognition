@@ -3,14 +3,14 @@ import { SlideLabel } from "./slide-label";
 
 export function HeroSection() {
   return (
-    <section id="title" className="mx-auto grid min-h-[calc(100vh-120px)] w-full max-w-7xl items-center gap-10 px-5 py-12 lg:grid-cols-[1.05fr_0.95fr]">
-      <div className="min-w-0 max-w-[22rem] sm:max-w-none">
+    <section id="title" className="mx-auto grid min-h-[calc(100vh-120px)] w-full min-w-0 max-w-7xl items-center gap-10 overflow-hidden px-4 py-10 sm:px-5 sm:py-12 lg:grid-cols-[1.05fr_0.95fr]">
+      <div className="w-full min-w-0 max-w-full">
         <SlideLabel>Artificial Intelligence Project</SlideLabel>
-        <h1 className="mt-5 max-w-4xl text-[2rem] font-black leading-[1.05] text-stone-950 sm:text-7xl sm:leading-[1.02]">
+        <h1 className="mt-5 max-w-full text-[2rem] font-black leading-[1.05] text-stone-950 sm:max-w-4xl sm:text-7xl sm:leading-[1.02]">
           <span className="block">Face Recognition</span>
           <span className="block">System</span>
         </h1>
-        <p className="mt-6 max-w-2xl text-lg leading-8 text-stone-700">
+        <p className="mt-6 max-w-full text-base leading-8 text-stone-700 sm:max-w-2xl sm:text-lg">
           A Streamlit application that compares a reference face against a second image using face detection, ArcFace embeddings, and cosine similarity.
         </p>
         <div className="mt-7 flex flex-wrap items-center gap-3">
@@ -31,7 +31,7 @@ export function HeroSection() {
             Source Code
           </a>
         </div>
-        <div className="mt-8 grid max-w-2xl overflow-hidden rounded-lg border border-stone-300 bg-white shadow-sm sm:grid-cols-3">
+        <div className="mt-8 grid w-full max-w-2xl overflow-hidden rounded-lg border border-stone-300 bg-white shadow-sm sm:grid-cols-3">
           <div className="p-4">
             <p className="text-3xl font-black text-primary-dark">512</p>
             <p className="mt-1 text-xs font-bold uppercase tracking-widest text-stone-500">Embedding Size</p>
@@ -47,7 +47,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="min-w-0 max-w-[22rem] rounded-lg border border-stone-300 bg-white p-4 shadow-xl sm:max-w-none">
+      <div className="w-full min-w-0 max-w-full rounded-lg border border-stone-300 bg-white p-4 shadow-xl sm:max-w-none">
         <div className="grid gap-4 sm:grid-cols-2">
           <FacePanel label="Image A: Reference" score="Known" />
           <FacePanel label="Image B: Check" score="Scan" />
