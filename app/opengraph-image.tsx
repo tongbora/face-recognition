@@ -1,4 +1,6 @@
 import { ImageResponse } from "next/og";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 import { seoConfig } from "@/components/seo";
 
 export const alt = seoConfig.title;
@@ -10,7 +12,10 @@ export const size = {
 
 export const contentType = "image/png";
 
-export default function OpenGraphImage() {
+export default async function OpenGraphImage() {
+  const logo = await readFile(join(process.cwd(), "app/favicon.ico"));
+  const logoSrc = `data:image/png;base64,${logo.toString("base64")}`;
+
   return new ImageResponse(
     (
       <div
@@ -35,13 +40,10 @@ export default function OpenGraphImage() {
               alignItems: "center",
               justifyContent: "center",
               borderRadius: "999px",
-              background: "#ff9100",
-              color: "#ffffff",
-              fontSize: "52px",
-              fontWeight: 900,
+              overflow: "hidden",
             }}
           >
-            F
+            <img src={logoSrc} alt="" width={92} height={92} />
           </div>
           <div style={{ fontSize: "28px", fontWeight: 900, letterSpacing: "10px", textTransform: "uppercase" }}>
             {seoConfig.siteName}
