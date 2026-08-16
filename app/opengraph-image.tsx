@@ -13,7 +13,9 @@ export const size = {
 export const contentType = "image/png";
 
 export default async function OpenGraphImage() {
-  const logo = await readFile(join(process.cwd(), "app/favicon.ico"));
+  const logo = await readFile(
+    join(process.cwd(), "public/logo.png")
+  );
   const logoSrc = `data:image/png;base64,${logo.toString("base64")}`;
 
   return new ImageResponse(
