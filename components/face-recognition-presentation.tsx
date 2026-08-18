@@ -1,6 +1,7 @@
 import { DecisionSection } from "./face-recognition/decision-section";
 import { FunctionsSection } from "./face-recognition/functions-section";
 import { HeroSection } from "./face-recognition/hero-section";
+import { ModelsSection } from "./face-recognition/models-section";
 import { OverviewSection } from "./face-recognition/overview-section";
 import { SetupSection } from "./face-recognition/setup-section";
 import { SiteNav } from "./face-recognition/site-nav";
@@ -14,6 +15,7 @@ export function FaceRecognitionPresentation() {
       <HeroSection />
       <OverviewSection />
       <StackSection />
+      <ModelsSection />
       <WorkflowSection />
       <DecisionSection />
       <FunctionsSection />

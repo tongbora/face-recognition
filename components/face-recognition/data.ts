@@ -1,4 +1,4 @@
-export const navItems = ["Overview", "Stack", "Workflow", "Decision", "Functions", "Setup"] as const;
+export const navItems = ["Overview", "Stack", "Models", "Workflow", "Decision", "Functions", "Setup"] as const;
 
 export const stackItems = [
   { name: "Python", purpose: "Application logic", logo: "python" },
@@ -10,6 +10,25 @@ export const stackItems = [
 ] as const;
 
 export type StackLogoName = (typeof stackItems)[number]["logo"];
+
+export const modelItems = [
+  {
+    stage: "Stage 1 — Detection",
+    name: "Haar Cascade",
+    tagline: "Finds where the face is.",
+    description: "Scans the image for face-like patterns and draws a box around the largest match.",
+    points: ["Looks for eyes, nose, and cheekbone patterns", "Checks multiple scales for face size", "Fast and CPU-friendly"],
+    output: "Cropped face region (bounding box)",
+  },
+  {
+    stage: "Stage 2 — Recognition",
+    name: "ArcFace (ResNet100)",
+    tagline: "Turns a face into an identity.",
+    description: "Converts the cropped face into a 512-number fingerprint for that person.",
+    points: ["Resizes face to 112 x 112 pixels", "Deep ResNet100 network extracts features", "Same person → similar vectors"],
+    output: "512-d normalized identity embedding",
+  },
+] as const;
 
 export const workflowItems = [
   {
